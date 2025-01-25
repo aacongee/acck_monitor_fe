@@ -316,10 +316,31 @@ provide('handleChangeType', handleChangeType)
   <div class="max-container">
     <div class="header">
       <a class="logo" href="#">
-        <svg class="arco-icon" viewBox="0 0 48 48" fill="currentColor">
-          <path data-v-2ee6cb6b="" fill-rule="evenodd" clip-rule="evenodd" d="M42.919 11.923L25 1.577a2 2 0 00-2 0L5.081 11.923a2 2 0 00-1 1.732v20.69a2 2 0 001 1.732L23 46.423a2 2 0 002 0l17.919-10.346a2 2 0 001-1.732v-20.69a2 2 0 00-1-1.732zM30.556 9.525L38.5 14 24 23l-13.808-8.668L17.5 10l6.5 4 6.556-4.475zM22 40.441V26.286L8 17.358v7.928l8 5.464v6.227l6 3.464zm10-3.464l-6 3.464V26.286l14-8.928v8.928l-8 5.464v5.227z" fill="currentColor"></path>
+        <svg class="arco-icon" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M61.9999 74.6666C61.9999 74.6666 57.1585 81.3609 51.3655 92.4445M51.3655 92.4445C42.7381 108.951 32 135.193 32 163.555C62 163.555 79.9999 181.333 79.9999 181.333C79.9999 181.333 91.9999 234.667 128 234.667C164 234.667 176 181.333 176 181.333C176 181.333 194 163.555 224 163.555C224 135.193 213.262 108.951 204.635 92.4445M51.3655 92.4445C51.3655 92.4445 20 68.7398 51.3655 21.3333C61.9999 27.2593 92 50.963 92 50.963C92 50.963 110 39.1111 128 39.1111C146 39.1111 164 50.963 164 50.963C164 50.963 194 27.2593 206 21.3333C236 68.742 204.635 92.4445 204.635 92.4445M194 74.6666C194 74.6666 198.842 81.3609 204.635 92.4445" stroke="url(#paint0_linear_55_29)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M117.333 192H128M128 192H138.667M128 192V202.667" stroke="url(#paint1_linear_55_29)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M90.6666 133.333L106.667 149.333" stroke="url(#paint2_linear_55_29)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M165.333 133.333L149.333 149.333" stroke="url(#paint3_linear_55_29)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="paint0_linear_55_29" x1="128" y1="21.3333" x2="128" y2="234.667" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ED6D68"/>
+              <stop offset="1" stop-color="#AC1B1B"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_55_29" x1="128" y1="192" x2="128" y2="202.667" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ED6D68"/>
+              <stop offset="1" stop-color="#AC1B1B"/>
+            </linearGradient>
+            <linearGradient id="paint2_linear_55_29" x1="98.6666" y1="133.333" x2="98.6666" y2="149.333" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ED6D68"/>
+              <stop offset="1" stop-color="#AC1B1B"/>
+            </linearGradient>
+            <linearGradient id="paint3_linear_55_29" x1="157.333" y1="133.333" x2="157.333" y2="149.333" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ED6D68"/>
+              <stop offset="1" stop-color="#AC1B1B"/>
+            </linearGradient>
+          </defs>
         </svg>
-        <span>Akile Monitor</span>
+        <span>Acck Monitor</span>
         <small style="font-weight: 400;opacity: .8"> ｜ {{ $t('title') }}</small>
       </a>
       <a-space>
@@ -374,10 +395,6 @@ provide('handleChangeType', handleChangeType)
         <div class="average">
           <div class="monitor-item-title">{{ $t('load') }} (1|5|15)</div>
           <div class="monitor-item-value">{{`${item.State.Load1} | ${item.State.Load5} | ${item.State.Load15}`}}</div>
-        </div>
-        <div class="uptime" style="width: 120px;">
-          <div class="monitor-item-title">{{ $t('due-time-only') }}</div>
-          <div class="monitor-item-value">{{hostInfo[item.Host.Name] ? calculateRemainingDays(hostInfo[item.Host.Name].due_time) : '-'}}</div>
         </div>
         <div class="uptime">
           <div class="monitor-item-title">{{ $t('report-time') }}</div>
@@ -484,9 +501,6 @@ provide('handleChangeType', handleChangeType)
             </a-col>
           </a-row>
         </div>
-        <div class="edit-btn" @click.stop="handleShowEdit(item.Host.Name)">
-          <icon-edit />
-        </div>
         <div class="delete-btn" @click.stop="handleShowDelete(item.Host.Name)">
           <icon-delete />
         </div>
@@ -529,8 +543,8 @@ provide('handleChangeType', handleChangeType)
         <a-button type="primary" :long="true" @click="handleEditHost">{{$t('edit-host-btn')}}</a-button>
       </div>
     </a-modal>
-    <div class="footer" style="margin-top: 30px">{{$t('open-source')}} <a href="https://github.com/akile-network/akile_monitor">GitHub v0.0.3</a></div>
-    <div class="footer" style="margin-bottom: 30px">Copyright © 2023-{{new Date().getFullYear()}} Akile LTD.</div>
+    <div class="footer" style="margin-top: 30px">Acck Cloud 节点监控</div>
+    <div class="footer" style="margin-bottom: 30px"><a href="https://github.com/akile-network/akile_monitor">Powered by Akile LTD.</a></div>
   </div>
 </template>
 
@@ -773,12 +787,6 @@ a {
     .network {
       display: inline-block;
       vertical-align: top;
-      width: 200px;
-    }
-
-    .uptime {
-      display: inline-block;
-      vertical-align: middle;
       width: 200px;
     }
 
